@@ -6,8 +6,22 @@ Simple connector between nodejs and R
 
 ```bash
 node -v # recommanded version > 10
-Rscript --version # Rscript command exist in PATH
+Rscript --version # Rscript commands exist in PATH
 ```
+
+## API
+
+- new R(option), option:
+
+  {silence: false}
+
+  silence: silence `print` / `cat` ... globally.
+
+- async exec(path, ...args)
+
+  path: file path
+
+  args: appending arguments in command line
 
 ## Notice
 
@@ -22,7 +36,7 @@ Rscript --version # Rscript command exist in PATH
 ```js
 const R = require("rscripts");
 var r = new R({ silence: false });
-process.env.renv = "1"; # env can only be string
+process.env.renv = "1"; # env can only be string variable
 r.exec("test.r")
   .then(console.log)
   .catch(console.log);
@@ -41,17 +55,11 @@ if (Sys.getenv("renv") == "1") cat(Sys.getenv("renv"));
 if (Sys.getenv("renv") == "2") {
   print(10);
   print(20);
-  Sys.sleep(1); # nessasary method, prevent pipe clogging
+  Sys.sleep(1); # necessary method, prevent pipe clogging
   cat(30);
 }
 if(Sys.getenv("renv") == 3) {
   args <- commandArgs(TRUE);
-  cat(args);
+  cat(args); # output : passing data 100 unrecommanded
 }
 ```
-
-### option
-
-    new R({silence: false})
-
-silence: silence `print` / `cat` ... globally.

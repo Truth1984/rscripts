@@ -1,0 +1,27 @@
+{
+  "name": "rscripts",
+  "version": "1.0.0",
+  "description": "nodejs R connector",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Truth1984/rscripts.git"
+  },
+  "keywords": [
+    "R",
+    "Rscript"
+  ],
+  "author": "awada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Truth1984/rscripts/issues"
+  },
+  "homepage": "https://github.com/Truth1984/rscripts#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tasklanguage": "^2.5.2"
+  }
+}

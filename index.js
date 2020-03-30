@@ -1,4 +1,4 @@
-const { cmd, cmdSync } = require("./_cmd");
+const { cmd } = require("./_cmd");
 
 module.exports = class R {
   /**

@@ -29,16 +29,4 @@ let cmd = (cmdline, consolelog = true, exit = false) => {
   });
 };
 
-let cmdSync = (scripts, log) => {
-  if (log) console.log(scripts);
-  if (!scripts || !scripts.split) return Promise.reject("command line not valid, S ");
-  let cmdarray = scripts.split(" ");
-  return spawnSync(cmdarray.shift(), cmdarray, {
-    shell: true,
-    stdio: "inherit",
-    encoding: "utf-8",
-    env: process.env
-  });
-};
-
-module.exports = { cmd, cmdSync };
+module.exports = { cmd };

@@ -5,8 +5,8 @@ Simple connector between nodejs and R
 ## prerequisite
 
 ```bash
-node -v # recommanded version > 10
-Rscript --version # Rscript commands exist in PATH
+$ node -v # recommanded version > 10
+$ Rscript --version # Rscript commands exist in PATH
 ```
 
 ## API
@@ -58,7 +58,7 @@ if (Sys.getenv("renv") == "2") {
   Sys.sleep(1); # necessary method, prevent pipe clogging
   cat(30);
 }
-if(Sys.getenv("renv") == 3) {
+if(Sys.getenv("renv") == "3") {
   args <- commandArgs(TRUE);
   cat(args); # output : passing data 100 unrecommanded
 }
